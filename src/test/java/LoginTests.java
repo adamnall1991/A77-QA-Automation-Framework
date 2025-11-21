@@ -23,6 +23,6 @@ public class LoginTests extends BaseTest {
         driver.get(url);
         Assert.assertEquals(driver.getCurrentUrl(), url);
         driver.quit();
-        //test comment2
+        //test comment3
     }
 }
