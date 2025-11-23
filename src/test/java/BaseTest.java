@@ -1,5 +1,7 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
@@ -38,4 +40,44 @@ public class BaseTest {
         driver.quit();
     }
 
+    public void login(){
+        // open Chrome browser
+        //ChromeOptions options = new ChromeOptions();
+        //options.addArguments("--remote-allow-origins=*");
+        //WebDriver driver = new ChromeDriver(options);
+        // wait 10 seconds
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//
+//        String url = "https://qa.koel.app/";
+//        driver.get(url);
+
+        navigateToPage();
+
+        provideEmail("adam.nall@testpro.io");
+
+        providePassword("adam_test1");
+
+        clickSubmit();
+    }
+
+    public void provideEmail(String email){
+        WebElement emailField = driver.findElement(By.cssSelector("input[type='email']"));
+        emailField.clear();
+        emailField.sendKeys(email);
+    }
+
+    public void providePassword(String password){
+        WebElement passField = driver.findElement(By.cssSelector("input[type='password']"));
+        passField.clear();
+        passField.sendKeys(password);
+    }
+
+    public void clickSubmit(){
+        WebElement loginButton = driver.findElement(By.cssSelector("button[type='submit']"));
+        loginButton.click();
+    }
+
+    public void navigateToPage(){
+        driver.get(url);
+    }
 }
