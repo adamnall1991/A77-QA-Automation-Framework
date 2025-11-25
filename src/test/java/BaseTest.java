@@ -15,10 +15,6 @@ public class BaseTest {
 
     public String url = "https://qa.koel.app/";
 
-//    @BeforeSuite
-//    static void setupClass() {
-//        WebDriverManager.chromedriver().setup();
-//    }
     @BeforeSuite
     void setupClass(){
         WebDriverManager.chromedriver().setup();
@@ -35,22 +31,9 @@ public class BaseTest {
 
     }
 
-    @AfterMethod
-    public void closeBrowser(){
-        driver.quit();
-    }
 
     public void login(){
         // open Chrome browser
-        //ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--remote-allow-origins=*");
-        //WebDriver driver = new ChromeDriver(options);
-        // wait 10 seconds
-//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-//
-//        String url = "https://qa.koel.app/";
-//        driver.get(url);
-
         navigateToPage();
 
         provideEmail("adam.nall@testpro.io");
