@@ -31,6 +31,11 @@ public class BaseTest {
 
     }
 
+//    @AfterMethod
+//    public void closeBrowser(){
+//        driver.quit();
+//    }
+
 
     public void login(){
         // open Chrome browser
