@@ -13,10 +13,12 @@ public class LoginPage extends BasePage{
     By submitBtn = By.cssSelector("button[type='submit']");
 
     public void provideEmail(String email){
+        findElement(emailField).clear();
         findElement(emailField).sendKeys(email);
     }
 
     public void providePassword(String password){
+        findElement(passwordField).clear();
         findElement(passwordField).sendKeys(password);
     }
 
@@ -24,9 +26,11 @@ public class LoginPage extends BasePage{
         findElement(submitBtn).click();
     }
 
-    public void login(){
-        provideEmail("adam.nall@testpro.io");
-        providePassword("adam_test1");
+    public void login(String email, String password){
+//        provideEmail("adam.nall@testpro.io");
+//        providePassword("adam_test1");
+        provideEmail(email);
+        providePassword(password);
         clickSubmit();
     }
 }
