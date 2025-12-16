@@ -18,4 +18,5 @@ public class AllSongsPage extends BasePage{
     public void choosePlayOption(){
         findElement(playOption).click();
     }
+
 }
