@@ -37,8 +37,8 @@ public class ProfileTests extends BaseTest {
         HomePage homePage = new HomePage(getDriver());
         ProfilePage profilePage = new ProfilePage(getDriver());
 
-        loginPage.provideEmail("carlitos@testpro.io");
-        loginPage.providePassword("vjNWk4Hn");
+        loginPage.provideEmail("adam.nall@testpro.io");
+        loginPage.providePassword("adam_test1");
         loginPage.clickSubmit();
 
         homePage.getUserAvatar().click();
