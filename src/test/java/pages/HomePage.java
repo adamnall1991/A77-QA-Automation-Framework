@@ -34,6 +34,7 @@ public class HomePage extends BasePage{
         return findElement(renamePlaylistSuccessMsg).getText();
     }
 
+
     public WebElement getUserAvatar(){
         return findElement(userAvatarIcon);
     }
